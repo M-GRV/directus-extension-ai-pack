@@ -4,7 +4,7 @@ A small bundle of Flow Operations which enable interaction with the [OpenAI](htt
 
 > Note: To use these you will need an API Key for the respective services.
 
-> Tested with Directus 10.5.2
+> Tested with Directus 11.2.2
 
 ## Installation
 
@@ -26,6 +26,7 @@ The package is published to npm:
 ### Stable Diffusion Operation
 
 This operation allow you generate images from text using the Stable Diffusion models with the [Stability.ai API](https://platform.stability.ai/) taking a `prompt` as input and saves the resulting image to the file library returning its ID as output.
+
 ![Demo](examples/stable-diffusion-demo.gif)
 
 **Output**\
@@ -74,6 +75,7 @@ For multiple results:
 ### GPT-3 Davinci Operation
 
 This operation allows text completion using the OpenAI Davinci models with the [OpenAI API](https://beta.openai.com/docs/guides/completion/introduction) taking a `prompt` as input and returns the generated text.
+
 ![Demo](examples/davinci-demo.gif)
 
 **Output**\
@@ -96,7 +98,7 @@ I am by no means an expert in what any of these model specific settings do so pl
 
 ### ChatGPT Operation
 
-This operation allows chat text completion using the OpenAI `gpt-3.5-turbo` models with the [OpenAI API](https://platform.openai.com/docs/guides/chat) taking a list of `messages` as input and returns the generated response text.
+This operation allows chat text completion using any of the available OpenAI models with the [OpenAI API](https://platform.openai.com/docs/guides/chat) taking a list of `messages` as input and returns the generated response text.
 ![Demo](examples/chatgpt_demo.gif)
 
 **Output**\
