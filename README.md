@@ -120,6 +120,6 @@ Please check out the [OpenAI docs](https://platform.openai.com/docs/guides/chat)
 
 ### Configuration Hook
 
-This hook ensures the existence of API Key fields in the Directus Setting. These global settings will be used by the individual operations if not overridden in its local configuration.
+This hook ensures the existence of API Key fields in the Directus Setting. These global settings will be used by the individual operations if not overridden in its local configuration. You can now also select your model of choice. If you want to manually choose one, simply click edit raw value.
 
 ![Global Configuration](examples/global-configuration.png)
