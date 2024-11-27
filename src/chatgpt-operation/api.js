@@ -17,17 +17,10 @@ export default defineOperationApi({
         const { SettingsService } = services;
         const schema = await getSchema();
         const settings = new SettingsService({ schema, knex: database });
-
+    
         const apiKey = await getSetting(settings, openAIField.field, api_key);
-        
-        // Get model directly from database
-        const dbSettings = await database
-            .select(gptModelField.field)
-            .from('directus_settings')
-            .first();
-            
-        const model = dbSettings?.[gptModelField.field] || "gpt-4o";
-
+        const model = await getSetting(settings, gptModelField.field, null) || "gpt-4o";
+    
         const openai = new OpenAI({ apiKey });
 
         try {
