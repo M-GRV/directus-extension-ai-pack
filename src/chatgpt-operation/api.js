@@ -5,21 +5,25 @@ import { openAIField, gptModelField } from "../configuration/fields";
 
 export default defineOperationApi({
     id: "chatgpt-operation",
-    handler: async ({
-        messages,
-        api_key,
-        temperature = 0.5,
-        max_tokens = null,
-        top_p = 1,
-        frequency_penalty = 0,
-        presence_penalty = 0,
-    }, { services, database, getSchema }) => {
+    handler: async (
+        {
+            messages,
+            api_key,
+            gpt_model,
+            temperature = 0.5,
+            max_tokens = null,
+            top_p = 1,
+            frequency_penalty = 0,
+            presence_penalty = 0,
+        },
+        { services, database, getSchema }
+    ) => {
         const { SettingsService } = services;
         const schema = await getSchema();
         const settings = new SettingsService({ schema, knex: database });
     
         const apiKey = await getSetting(settings, openAIField.field, api_key);
-        const model = await getSetting(settings, gptModelField.field, null) || "gpt-4o";
+        const model = await getSetting(settings, gptModelField.field, gpt_model);
     
         const openai = new OpenAI({ apiKey });
 

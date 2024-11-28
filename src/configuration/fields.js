@@ -25,6 +25,33 @@ export const groupField = {
     }
 };
 
+export const gptModelChoices = [
+    {
+        "text": "GPT-4o",
+        "value": "gpt-4o"
+    },
+    {
+        "text": "GPT-4o mini",
+        "value": "gpt-4o-mini"
+    },
+    {
+        "text": "GPT-4 Turbo",
+        "value": "gpt-4-turbo-preview"
+    },
+    {
+        "text": "GPT-4",
+        "value": "gpt-4"
+    },
+    {
+        "text": "GPT-3.5 Turbo",
+        "value": "gpt-3.5-turbo"
+    },
+    {
+        "text": "GPT-3.5 Turbo 16K",
+        "value": "gpt-3.5-turbo-16k"
+    }
+];
+
 export const gptModelField = {
     "collection": "directus_settings",
     "field": "Default_GPT_Model",
@@ -52,32 +79,7 @@ export const gptModelField = {
         "special": null,
         "interface": "select-dropdown",
         "options": {
-            "choices": [
-                {
-                    "text": "GPT-4o",
-                    "value": "gpt-4o"
-                },
-                {
-                    "text": "GPT-4o mini",
-                    "value": "gpt-4o-mini"
-                },
-                {
-                    "text": "GPT-4 Turbo",
-                    "value": "gpt-4-turbo-preview"
-                },
-                {
-                    "text": "GPT-4",
-                    "value": "gpt-4"
-                },
-                {
-                    "text": "GPT-3.5 Turbo",
-                    "value": "gpt-3.5-turbo"
-                },
-                {
-                    "text": "GPT-3.5 Turbo 16K",
-                    "value": "gpt-3.5-turbo-16k"
-                }
-            ]
+            "choices": gptModelChoices,
         },
         "display": "formatted-value",
         "display_options": null,
