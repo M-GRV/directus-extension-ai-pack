@@ -1,4 +1,4 @@
-const OpenAI = require("openai");
+import { OpenAI } from "openai";
 import { defineOperationApi } from "@directus/extensions-sdk";
 import { getSetting } from "../lib/util";
 import { openAIField, gptModelField } from "../configuration/fields";

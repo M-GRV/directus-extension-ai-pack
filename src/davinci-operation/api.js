@@ -1,5 +1,5 @@
 import { defineOperationApi } from '@directus/extensions-sdk';
-const OpenAI = require("openai");
+import { OpenAI } from "openai";
 import { openAIField } from '../configuration/fields';
 import { getSetting } from '../lib/util';
 
