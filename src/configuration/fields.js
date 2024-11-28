@@ -52,6 +52,8 @@ export const gptModelChoices = [
     }
 ];
 
+export const gptDefaultModel = "gpt-4o";
+
 export const gptModelField = {
     "collection": "directus_settings",
     "field": "Default_GPT_Model",
@@ -60,7 +62,7 @@ export const gptModelField = {
         "name": "Default_GPT_Model",
         "table": "directus_settings",
         "data_type": "varchar",
-        "default_value": "gpt-4o",
+        "default_value": gptDefaultModel,
         "max_length": 255,
         "numeric_precision": null,
         "numeric_scale": null,

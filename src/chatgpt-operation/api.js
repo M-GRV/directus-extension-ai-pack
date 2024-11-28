@@ -1,7 +1,7 @@
 import { OpenAI } from "openai";
 import { defineOperationApi } from "@directus/extensions-sdk";
 import { getSetting } from "../lib/util";
-import { openAIField, gptModelField } from "../configuration/fields";
+import { openAIField, gptModelField, gptDefaultModel } from "../configuration/fields";
 
 export default defineOperationApi({
     id: "chatgpt-operation",
@@ -23,7 +23,7 @@ export default defineOperationApi({
         const settings = new SettingsService({ schema, knex: database });
     
         const apiKey = await getSetting(settings, openAIField.field, api_key);
-        const model = await getSetting(settings, gptModelField.field, gpt_model);
+        const model = await getSetting(settings, gptModelField.field, gpt_model) ?? gptDefaultModel;
     
         const openai = new OpenAI({ apiKey });
 
